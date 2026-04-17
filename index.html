@@ -434,9 +434,27 @@
     /* Problema & Solución */
     .problemas-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr;
       gap: 24px;
       align-items: stretch;
+    }
+
+    @media (min-width: 900px) {
+      .problemas-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 900px) {
+      .testimonios-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     .problema-card {
@@ -448,6 +466,39 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .check-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Grid específica para visualización (4 items) */
+    .visualizacion-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .visualizacion-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .visualizacion-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+      }
     }
 
     .problema-icon {
@@ -802,7 +853,9 @@
 
     @media (min-width: 900px) {
       .bonos-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 850px;
+        margin: 0 auto 24px;
       }
     }
 
@@ -1406,7 +1459,7 @@
         <h2>Esto es lo que vas a poder hacer en 14 días</h2>
         <div class="titulo-separador"></div>
       </div>
-      <div class="problemas-grid">
+      <div class="visualizacion-grid">
         <div class="problema-card fade-up">
           <div class="problema-icon">🌅</div>
           <h3>Las mañanas vuelven a ser tuyas</h3>
@@ -1617,7 +1670,7 @@
         <h2>Lo que dicen nuestros clientes</h2>
         <div class="titulo-separador"></div>
       </div>
-      <div class="bonos-grid"> <!-- Usando grid para simplicidad en esta versión o slider si se prefiere -->
+      <div class="testimonios-grid"> <!-- Usando grid para simplicidad en esta versión o slider si se prefiere -->
         <div class="problema-card fade-up">
           <div style="color: var(--dorado); margin-bottom: 10px;">★★★★★</div>
           <p>"Mi marido no reconocía cómo me veía en el espejo. Pero lo que más me impactó fue poder estar con mis hijas
@@ -1649,7 +1702,7 @@
         <h2>¿Este protocolo es para ti?</h2>
         <div class="titulo-separador"></div>
       </div>
-      <div class="problemas-grid">
+      <div class="check-grid">
         <div class="problema-card fade-up" style="border-top-color: var(--verde-claro);">
           <h3 style="color: var(--verde-claro); margin-bottom: 15px;">✅ SÍ es para ti si...</h3>
           <ul style="list-style: none; font-size: 15px; line-height: 2;">
